@@ -59,10 +59,7 @@ class UpdateTokenTest extends TestCase
     /** @test */
     public function an_unauthenticated_user_cannot_add_a_token()
     {
-        $this->postJson('/githubToken', ['token' => Str::random(10)])
+        $this->putJson('/auth/githubToken', ['token' => Str::random(10)])
             ->assertUnauthorized();
-
-        // check that there is a record with the users id in the tokens table
-        $this->assertDatabaseCount('github_tokens', 0);
     }
 }
