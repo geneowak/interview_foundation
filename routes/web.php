@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoginViewController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\UserRegistrationController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +23,14 @@ Route::group(['middleware' => 'guest'], function () {
         return view('welcome');
     });
 
+    Route::get('login', LoginViewController::class)->name('login');
+
     Route::post('/auth/registration', UserRegistrationController::class);
     Route::post('/auth/login', LoginController::class);
 
+});
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('/auth/logout', LogoutController::class)->name('logout');
+    Route::get('/home', HomeController::class)->name('home');
 });

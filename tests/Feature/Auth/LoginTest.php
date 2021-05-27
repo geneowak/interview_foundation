@@ -12,6 +12,13 @@ class LoginTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    public function it_renders_the_login_page()
+    {
+        $this->get('login')
+            ->assertOk();
+    }
+
+    /** @test */
     public function a_user_can_login_successfully()
     {
         $user = factory(User::class)->create(['email' => 'hello@wold.com', 'password' => 'password']);
