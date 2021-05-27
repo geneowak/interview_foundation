@@ -39,7 +39,7 @@
       </b-form-group>
 
       <b-form-group class="tw-text-center">
-        <b-button type="submit" variant="primary">Submit</b-button>
+        <b-button type="submit" variant="primary">Login</b-button>
       </b-form-group>
     </b-form>
   </b-card>

@@ -10,9 +10,10 @@
                     </form>
                 </a>
             @else
-                <a href="{{ route('login') }}">Login</a>
-
-                @if (Route::has('register'))
+                @if(!request()->routeIs('login'))
+                    <a href="{{ route('login') }}">Login</a>
+                @endif
+                @if (!request()->routeIs('register'))
                     <a href="{{ route('register') }}">Register</a>
                 @endif
             @endauth

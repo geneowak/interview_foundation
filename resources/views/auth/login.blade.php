@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <login-component></login-component>
+    <user-login-component></user-login-component>
 @endsection

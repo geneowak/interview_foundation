@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Auth;
 use Tests\TestCase;
 
-class LogoutTest extends TestCase
+class UserLogoutTest extends TestCase
 {
     use RefreshDatabase;
 

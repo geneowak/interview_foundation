@@ -6,7 +6,8 @@ import {AlertPlugin, ButtonPlugin, CardPlugin, FormGroupPlugin, FormInputPlugin,
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-Vue.component('login-component', require('./components/Login.vue').default);
+Vue.component('user-login-component', require('./components/UserLoginComponent.vue').default);
+Vue.component('user-registration-component', require('./components/UserRegistrationComponent.vue').default);
 
 Vue.use(CardPlugin);
 Vue.use(FormPlugin);
