@@ -2,6 +2,7 @@
 
 
 [![Build Status](https://travis-ci.com/geneowak/interview_foundation.svg?branch=mainline)](https://travis-ci.com/geneowak/interview_foundation)
+[![Coverage Status](https://coveralls.io/repos/github/geneowak/interview_foundation/badge.svg?branch=mainline)](https://coveralls.io/github/geneowak/interview_foundation?branch=mainline)
 
 This is a vanilla Laravel 7 install
 
