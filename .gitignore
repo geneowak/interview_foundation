@@ -5,6 +5,7 @@
 /public/css
 /storage/*.key
 /vendor
+clover.xml
 .idea
 .env
 .env.backup
