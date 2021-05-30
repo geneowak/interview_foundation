@@ -18,9 +18,10 @@ before_script:
   - php artisan migrate
 
 script:
+  - mkdir -p build/logs
   - vendor/bin/phpcs --standard=psr2 app/
-  - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover clover.xml --stop-on-failure
-  - php ./coverage-checker.php clover.xml 38
+  - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover build/logs/clover.xml --stop-on-failure
+  - php ./coverage-checker.php build/logs/clover.xml 38
 
 after_success:
-  - travis_retry php vendor/bin/php-coveralls
+  - travis_retry php vendor/bin/php-coveralls -v
