@@ -25,7 +25,7 @@ class GetStarredReposTest extends TestCase
                         $password === null &&
                         $authMethod === \Github\Client::AUTH_ACCESS_TOKEN;
                 });
-            
+
             $mock->shouldReceive('me->starring->all')->once();
         });
 
@@ -46,6 +46,18 @@ class GetStarredReposTest extends TestCase
             ->getJson('/auth/starredGithubRepos')
             ->assertStatus(400)
             ->assertJson(['message' => 'No github token has been added yet.']);
+    }
+
+    /** @test */
+    public function it_returns_a_400_for_a_bad_github_token()
+    {
+        $user = factory(User::class)
+            ->create(['github_token' => Str::random(10)]);
+
+        $this->actingAs($user)
+            ->getJson('/auth/starredGithubRepos')
+            ->assertStatus(400)
+            ->assertJson(['message' => 'Bad credentials']);
     }
 
     /** @test */
