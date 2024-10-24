@@ -26,6 +26,6 @@
   "dependencies": {
     "bootstrap": "^5.0.1",
     "bootstrap-vue": "^2.21.2",
-    "vue": "^2.6.12"
+    "vue": "^3.0.0"
   }
 }
